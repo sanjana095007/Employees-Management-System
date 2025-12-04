@@ -1,0 +1,29 @@
+package net.javaspringboot.ems.mapper;
+
+import net.javaspringboot.ems.Entity.Employee;
+import net.javaspringboot.ems.dto.EmployeeDto;
+
+public class EmployeeMapper {
+    public static EmployeeDto mapToEmployeeDto(Employee employee){
+        return new EmployeeDto(
+                employee.getId(),
+                employee.getFirstName(),
+                employee.getLastName(),
+                employee.getEmail(),
+                employee.getPhone(),
+                employee.getDepartment(),
+                employee.getSalary()
+        );
+    }
+    public static Employee mapToEmployee(EmployeeDto employeeDto){
+        return new Employee(
+                employeeDto.getId(),
+                employeeDto.getFirstName(),
+                employeeDto.getLastName(),
+                employeeDto.getEmail(),
+                employeeDto.getPhone(),
+                employeeDto.getDepartment(),
+                employeeDto.getSalary()
+        );
+    }
+}
